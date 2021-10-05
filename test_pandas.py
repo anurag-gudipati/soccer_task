@@ -8,14 +8,14 @@ class soccer():
         self.df = pd.read_csv(filepath)
         origin_df  = self.df
 
-    def stat1(self):
+    def high_win_perc(self):
         self.df['win_perc'] = (self.df['Wins'] / self.df['Games']) * 100
         self.df = self.df.sort_values(by=['win_perc'], ascending=False).reset_index(drop=True)
         self.df_top_10 = self.df[:10].copy(deep=True)
         self.list_top10_teams = self.df_top_10['Team'].tolist()
         return self.list_top10_teams
 
-    def stat2(self):
+    def most_draws(self):
         self.df_most_draws = self.df.sort_values(by=['Draws'], ascending=False).copy(deep=True).reset_index(drop=True)
         self.df_most_draws_team = self.df_most_draws[:1].drop(columns=['win_perc'])
         return self.df_most_draws_team
@@ -39,8 +39,8 @@ class soccer():
 filepath = 'C:/Users/Gathi/Documents/test/soccer.csv'
 df = pd.read_csv(filepath)
 df1 = soccer(filepath)
-print (df1.stat1())
-print (df1.stat2())
+print (df1.high_win_perc())
+print (df1.most_draws())
 print (df1.stats_display())
 
 
