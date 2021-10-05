@@ -5,7 +5,7 @@ from pandas._testing import assert_frame_equal
 import test_pandas as tp
 
 
-filepath = 'C:/Users/Gathi/Documents/test/soccer.csv'
+filepath = 'soccer.csv'
 def test_filepath():
     """
     Checking the filepath in given path
