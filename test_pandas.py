@@ -28,7 +28,7 @@ class soccer():
         self.df['goal_diff']= self.df['Goals'] - self.df['Goals Allowed']
         self.df['goal_diff_abs']=self.df['goal_diff'].abs()
         self.gols_min = self.df.loc[self.df['goal_diff_abs'].idxmin()]
-        print ("team name :",self.gols_min['Team'])
+        print ("team name with smallest difference in for and against goals :",self.gols_min['Team'])
         print ("***********************************Completed************************************")
         return self.gols_min['Team']
 
